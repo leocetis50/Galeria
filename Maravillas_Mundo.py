@@ -10,7 +10,7 @@ def main(page: ft.Page):
         "pais":"Italia",
         "año":"70-80 d.C.",
         "descripcion":"Un antiguo anfiteatro romano, cede de espectaculos publicos",
-        "imagen":"coliseo.jpg"
+        "imagen":"https://raw.githubusercontent.com/leocetis50/Galeria/refs/heads/main/coliseo.jpg"
         },
         {
         
@@ -18,7 +18,7 @@ def main(page: ft.Page):
         "pais":"China",
         "año":"Siglo VII a.C. -Dinastia Ming",
         "descripcion":"Un sistema de fortificaciones defensivas de enormes dimenciones",
-        "imagen":"muralla-china.jpg"
+        "imagen":"https://raw.githubusercontent.com/leocetis50/Galeria/refs/heads/main/muralla.jpg"
         
         },
         {
@@ -27,7 +27,7 @@ def main(page: ft.Page):
         "pais":"Mexico",
         "año":"600 d.C. - 900 d.C",
         "descripcion":"Una ciudad y centro ceremonial de la cultura maya en la peninsula de Yucatan",
-        "imagen":"itza.jpg"
+        "imagen":"https://raw.githubusercontent.com/leocetis50/Galeria/refs/heads/main/itza.jpg"
         },
         {
         
@@ -35,7 +35,7 @@ def main(page: ft.Page):
         "pais":"Brasil",
         "año":"1931",
         "descripcion":"Una imponente estatua de Jesucristo en Rio de Janeiro",
-        "imagen":"cristo.jpg"
+        "imagen":"https://raw.githubusercontent.com/leocetis50/Galeria/refs/heads/main/cristo.jpg"
         },
         {
 
@@ -43,7 +43,7 @@ def main(page: ft.Page):
         "pais":"Peru",
         "año":"Siglo XV",
         "descripcion":"Una ciudadadela inca en lo alto de los andes famosa por sus construcciones de piedra",
-        "imagen":"machu-picchu.jpg"
+        "imagen":"https://raw.githubusercontent.com/leocetis50/Galeria/refs/heads/main/machu.jpg"
         },
         {
 
@@ -51,7 +51,7 @@ def main(page: ft.Page):
         "pais":"Jordania",
         "año":"Siglo IV a.C.",
         "descripcion":"Una ciudad antigua con estructuras talladas en roca, fue un importante centro comercial",
-        "imagen":"petra.jpg"
+        "imagen":"https://raw.githubusercontent.com/leocetis50/Galeria/refs/heads/main/petra.jpg"
         },
         {
         
@@ -59,7 +59,7 @@ def main(page: ft.Page):
         "pais":"India",
         "año":"1632-1653",
         "descripcion":"Un mausoleo de marmol blanco, conocido por su arquitectura y bellesa",
-        "imagen":"taj_mahal.jpg"
+        "imagen":"https://raw.githubusercontent.com/leocetis50/Galeria/refs/heads/main/taj_mahal.jpg"
         },
         {
 
@@ -67,7 +67,7 @@ def main(page: ft.Page):
         "pais":"Egipto",
         "año":"2580-2560 a.C.",
         "descripcion":"Un monumento funerario y la unica maravilla antigua existente",
-        "imagen":"giza.jpg"
+        "imagen":"https://raw.githubusercontent.com/leocetis50/Galeria/refs/heads/main/giza.jpg"
         },
         {
 
@@ -75,7 +75,7 @@ def main(page: ft.Page):
         "pais":"Grecia",
         "año":"200 a.C.",
         "descripcion":"Una estatua gigante de bronce de un dios griego",
-        "imagen":"coloso-rodas.jpg"
+        "imagen":"https://raw.githubusercontent.com/leocetis50/Galeria/refs/heads/main/coloso.jpg"
         },
         {
 
@@ -83,7 +83,7 @@ def main(page: ft.Page):
         "pais":"Irak",
         "año":"605-562 a.C.",
         "descripcion":"Un complejo de jardines acencionales",
-        "imagen":"babilonia.jpg"
+        "imagen":"https://raw.githubusercontent.com/leocetis50/Galeria/refs/heads/main/jardines.jpg"
         },
         {
         
@@ -91,7 +91,7 @@ def main(page: ft.Page):
         "pais":"Grecia",
         "año":"435 a.C.",
         "descripcion":"Una colosal estatua sentada de Zeus",
-        "imagen":"zeus.jpg"
+        "imagen":"https://raw.githubusercontent.com/leocetis50/Galeria/refs/heads/main/zeus.jpg"
         
         },
         {
@@ -100,7 +100,7 @@ def main(page: ft.Page):
         "pais":"Turquia",
         "año":"550 a.C.",
         "descripcion":"Un templo dedicado a la diosa Artemisa",
-        "imagen":"artemisa.jpg"
+        "imagen":"https://raw.githubusercontent.com/leocetis50/Galeria/refs/heads/main/artemisa.jpg"
         },
         {
 
@@ -108,7 +108,7 @@ def main(page: ft.Page):
         "pais":"Turquia",
         "año":"351 a.C.",
         "descripcion":"Un suntuaoso sepulcro para una satrapa persa",
-        "imagen":"mausoleo.jpg"
+        "imagen":"https://raw.githubusercontent.com/leocetis50/Galeria/refs/heads/main/mausoleo.jpg"
         },
         {
 
@@ -116,9 +116,8 @@ def main(page: ft.Page):
         "pais":"Egipto",
         "año":"280 a.C.",
         "descripcion":"Un gran faro que guiaba a los barcos",
-        "imagen":"alejandria.jpg"
-        
-        },
+        "imagen":"https://raw.githubusercontent.com/leocetis50/Galeria/refs/heads/main/alejandria.jpg"
+        }
     ]
 
     indice_actual=[0]
@@ -142,7 +141,7 @@ def main(page: ft.Page):
     def mostrar_monumento():
         maravilla=maravillas[indice_actual[0]]
         contenedor.content=ft.Column([
-            ft.Image(src=f"./{maravilla['imagen']}",width=300,height=300,fit=ft.ImageFit.CONTAIN),
+            ft.Image(src=maravilla["imagen"], width=300,height=300,fit=ft.ImageFit.CONTAIN),
             ft.Text(maravilla["monumento"],size=20,weight=ft.FontWeight.BOLD),
             ft.Text(f"Pais: {maravilla['pais']}",size=16),
             ft.Text(f"Año: {maravilla['año']}",size=16),
@@ -176,4 +175,4 @@ def main(page: ft.Page):
     )
     mostrar_monumento()
 
-ft.app(target=main, assets_dir="assets")
+ft.app(target=main)
